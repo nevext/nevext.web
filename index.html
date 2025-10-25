@@ -2,7 +2,7 @@
 <html lang="en-US">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dave | Portfolio</title>
   <style>
     body {
@@ -243,60 +243,6 @@
 
     .unlock-anim {
       animation: unlockPop .5s ease, neonPulse 1.6s ease-in-out 1;
-    }
-
-    /* Fluid type for hero */
-    .intro { font-size: clamp(1.25rem, 4.5vw, 2em); }
-    .typing { font-size: clamp(1.6rem, 8vw, 3.5em); }
-
-    /* Corner mini-player fits small screens */
-    .music-card { width: min(320px, 92vw); }
-
-    /* Responsive layout and spacing */
-    @media (max-width: 1024px) {
-      .container { flex-direction: column; gap: 28px; text-align: center; }
-      .text { padding-right: 0; }
-      .actions, .social { justify-content: center; }
-      .avatar img { max-width: 520px; margin-top: 24px; }
-      .services { margin-top: 160px; padding: 100px 0; }
-      #david { margin-top: 100px; }
-    }
-
-    @media (max-width: 920px) {
-      .curiosity-card { flex-direction: column; text-align: center; align-items: center; }
-      .curiosity-content { text-align: center; }
-    }
-
-    @media (max-width: 768px) {
-      .nav-inner { padding: 10px 16px; }
-      .logo { font-size: 1.3em; }
-      .nav-links { flex-wrap: wrap; gap: 10px; }
-      .nav-links a { margin-left: 14px; font-size: 0.95rem; }
-      .avatar img { max-width: 360px; margin-top: 12px; }
-      .services { margin-top: 120px; padding: 80px 0; }
-      #projects, #certificates { scroll-margin-top: 84px; }
-      .projects { padding: 90px 0; }
-      #certificates { padding: 90px 0; }
-      #david { margin-top: 80px; }
-    }
-
-    @media (max-width: 560px) {
-      .social { gap: 20px; }
-      .social img { width: 28px; height: 28px; }
-      .curiosity-avatar img { max-width: 320px; }
-      .music-card { right: 12px; bottom: 12px; }
-      .toast-container { right: 12px; bottom: 12px; }
-    }
-
-    @media (max-width: 420px) {
-      .intro { font-size: clamp(1.1rem, 5.4vw, 1.6rem); }
-      .typing { font-size: clamp(1.3rem, 8.8vw, 2.2rem); }
-      .avatar img { max-width: 280px; }
-      .curiosity-avatar img { max-width: 280px; }
-      .services { margin-top: 90px; padding: 64px 0; }
-      .projects { padding: 72px 0; }
-      #certificates { padding: 72px 0; }
-      #curiosidade { margin-top: 180px; padding: 72px 0; }
     }
 
     @keyframes unlockPop {
@@ -946,7 +892,7 @@
     .toast--timid {
       font-size: 0.85em;
       background: rgba(255,255,255,0.06);
-      border-color: rgba(255, 255, 255, 0.25);
+      border-color: rgba(255,255,255,0.25);
       text-shadow: 0 0 4px rgba(255,255,255,0.18);
       animation: toast-in .18s ease forwards, toast-out .18s ease forwards 1.4s;
     }
@@ -1152,6 +1098,182 @@
     .music-card {
       border-color: rgba(255,255,255,0.25) !important;
       box-shadow: 0 10px 30px rgba(255,255,255,0.12) !important;
+    }
+
+    @keyframes unlockPop {
+      0%   { transform: scale(0.96); box-shadow: 0 0 0 rgba(255,255,255,0); }
+      60%  { transform: scale(1.04); box-shadow: 0 0 16px rgba(255,255,255,0.35); }
+      100% { transform: scale(1.0);  box-shadow: 0 0 0 rgba(255,255,255,0); }
+    }
+    @keyframes neonPulse {
+      0%,100% { box-shadow: 0 0 10px rgba(255,255,255,0.25); }
+      50%     { box-shadow: 0 0 22px rgba(255,255,255,0.55); }
+    }
+    .option-unlocked {
+      border-color: rgba(255,255,255,0.65) !important;
+      box-shadow: 0 0 18px rgba(255,255,255,0.25) !important;
+      animation: optionGlow 1s ease !important;
+    }
+    @keyframes optionGlow {
+      0%   { box-shadow: 0 0 0 rgba(255,255,255,0); }
+      50%  { box-shadow: 0 0 22px rgba(255,255,255,0.45); }
+      100% { box-shadow: 0 0 0 rgba(255,255,255,0); }
+    }
+
+    .modal-content h2 {
+      color: #fff !important;
+      text-shadow: 0 0 8px rgba(255,255,255,0.9),
+                   0 0 16px rgba(255,255,255,0.6),
+                   0 0 24px rgba(255,255,255,0.35) !important;
+    }
+    .option h3 {
+      color: #fff !important;
+      text-shadow: 0 0 8px rgba(255,255,255,0.9),
+                   0 0 16px rgba(255,255,255,0.6),
+                   0 0 24px rgba(255,255,255,0.35) !important;
+    }
+    .option {
+      background: linear-gradient(180deg, #0f0f0f 0%, #121212 100%) !important;
+      border-color: rgba(255,255,255,0.18) !important;
+      box-shadow: 0 0 16px rgba(255,255,255,0.08) !important;
+    }
+
+    .project-card .thumb {
+      background: linear-gradient(135deg, rgba(255,255,255,0.12), rgba(255,255,255,0.06)) !important;
+      box-shadow: inset 0 0 16px rgba(255,255,255,0.12) !important;
+      color: #fff !important;
+    }
+
+    .certificate-card .thumb {
+      background: linear-gradient(135deg, rgba(255,255,255,0.12), rgba(255,255,255,0.06)) !important;
+      box-shadow: inset 0 0 16px rgba(255,255,255,0.12) !important;
+      color: #fff !important;
+    }
+
+    .logo .neon {
+      color: #00ffd5 !important;
+      text-shadow: 0 0 8px #00ffd5, 0 0 16px #00ffd5, 0 0 32px #00ffd5 !important;
+    }
+
+    .question-title {
+      color: #fff !important;
+      text-shadow: 0 0 8px rgba(255, 255, 255, 0.9),
+                   0 0 16px rgba(255, 255, 255, 0.6),
+                   0 0 24px rgba(255, 255, 255, 0.35) !important;
+    }
+
+    /* Responsivo: tablets até desktops pequenos */
+    @media (max-width: 1024px) {
+      .nav-inner { padding: 10px 18px; }
+      .nav-links a { margin-left: 16px; }
+      .typing { font-size: 3em; }
+      .intro { font-size: 1.8em; }
+      .bio { font-size: 1em; }
+      .avatar img { max-width: 640px; }
+      .services { margin-top: 160px; padding: 110px 0; }
+      #certificates { margin-top: 180px; padding: 110px 0; }
+      .projects { margin-top: 180px; padding: 110px 0; }
+    }
+
+    /* Responsivo: mobile e tablets pequenos */
+    @media (max-width: 768px) {
+      .nav-inner { padding: 10px 14px; }
+      .logo { font-size: 1.3em; }
+      .nav-links { flex-wrap: wrap; row-gap: 6px; }
+      .nav-links a { margin-left: 12px; font-size: 0.95em; }
+
+      .container { flex-direction: column; align-items: center; padding-top: 72px; padding-bottom: 80px; }
+      .text { padding-right: 0; text-align: center; }
+      .intro { font-size: 1.6em; }
+      .typing { font-size: 2.4em; }
+      .bio { font-size: 0.98em; margin-left: auto; margin-right: auto; }
+      .actions { justify-content: center; }
+
+      .social { justify-content: center; gap: 20px; }
+      .social img { width: 28px; height: 28px; }
+
+      .avatar img { max-width: 420px; margin-top: 24px; }
+
+      #david { margin-top: 80px; }
+      .about { padding: 72px 0; }
+      .about-inner { gap: 40px; justify-content: center; }
+      .about-text h2 { font-size: 1.8em; }
+      .about-text h3 { font-size: 1.2em; }
+
+      .services { margin-top: 120px; padding: 96px 0; }
+      .services-title { font-size: 2em; margin-bottom: 36px; }
+      .services-grid { gap: 20px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+      .service-card { padding: 24px 16px; }
+
+      .projects { margin-top: 140px; padding: 96px 0; }
+      .projects-grid { width: 94%; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+
+      #certificates { margin-top: 140px; padding: 96px 0; }
+      .certificates-grid { width: 94%; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+
+      #curiosidade { margin-top: 160px; padding: 84px 0; }
+      .curiosity-wrap { padding: 0 12px; }
+      .curiosity-card { flex-direction: column; text-align: center; align-items: center; }
+      .curiosity-content { text-align: center; }
+      .curiosity-controls { justify-content: center; }
+      .curiosity-avatar img { max-width: 320px; }
+
+      /* Botões cheios no mobile para facilitar toque */
+      .actions .btn,
+      .about-actions .btn { width: 100%; max-width: 420px; }
+
+      /* Modais mais confortáveis no mobile */
+      .modal-content { width: 94%; max-height: 85vh; overflow-y: auto; padding: 20px; }
+      .option { padding: 12px; }
+
+      /* Player de música ocupa a largura */
+      .music-card { right: 10px; bottom: 10px; width: calc(100% - 20px); }
+      .toast-container { right: 10px; bottom: 10px; }
+    }
+
+    /* Responsivo: mobile pequeno */
+    @media (max-width: 480px) {
+      .nav-inner { padding: 8px 10px; }
+      .nav-links a { margin-left: 10px; font-size: 0.9em; }
+
+      .intro { font-size: 1.4em; }
+      .typing { font-size: 2em; }
+      .bio { font-size: 0.95em; }
+      .avatar img { max-width: 320px; }
+
+      .services-title,
+      .projects-title,
+      .certificates-title,
+      .curiosity-title { font-size: 1.7em; }
+
+      .project-card .thumb { height: 120px; font-size: 2em; }
+      .certificate-card .thumb { width: 56px; height: 56px; font-size: 1.4em; }
+    }
+
+    /* Responsivo: mobile muito pequeno */
+    @media (max-width: 360px) {
+      .nav-links a { margin-left: 8px; font-size: 0.86em; }
+      .intro { font-size: 1.25em; }
+      .typing { font-size: 1.8em; }
+      .avatar img { max-width: 280px; }
+      .social img { width: 24px; height: 24px; }
+    }
+
+    /* Acessibilidade: reduzir animações se preferido */
+    @media (prefers-reduced-motion: reduce) {
+      .avatar img,
+      .curiosity-avatar img { animation: none !important; }
+      .unlock-anim,
+      .option-unlocked { animation: none !important; }
+      .toast { animation: none !important; opacity: 1; transform: none; }
+    }
+
+    @media (max-width: 768px) {
+      .intro,
+      .typing,
+      .bio {
+        display: none !important;
+      }
     }
   </style>
 </head>
